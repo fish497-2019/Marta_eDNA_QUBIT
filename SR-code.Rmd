@@ -37,6 +37,25 @@ ggplot(qbdata, aes(x = CRF_num, y = qubit_conc, color = Habitat)) + geom_point(s
 
 
 
+```{r}
+ggplot(qbdata, aes(x = CRF_num, y = qubit_conc, color = Orig..sample.volume..ml.)) + geom_point(size = 3, alpha = 0.5)
+  
+  
+  
+```
+
+
+
+```{r}
+ggplot(qbdata, aes(x = qubit_conc, y = Orig..sample.volume..ml., color = CRF_num)) + geom_point(size = 3, alpha = 0.5)
+  
+  
+  
+```
+
+
+
+
 
 ggplot(qbdata, aes(x = CRF_num, y = qubit_conc)) + geom_point() + stat_smooth()
 
