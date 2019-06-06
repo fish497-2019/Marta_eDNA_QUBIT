@@ -20,6 +20,22 @@ library(ggplot2)
 # skewed towards 0 CRF values
 
 
+```{r}
+ggplot(qbdata, aes(x = CRF_num, y = qubit_conc)) + geom_point()
+  
+```
+
+
+
+```{r}
+ggplot(qbdata, aes(x = CRF_num, y = qubit_conc, color = Habitat)) + geom_point(size = 3, alpha = 0.5) +
+  scale_y_log10() 
+  
+  
+  
+```
+
+
 
 
 ggplot(qbdata, aes(x = CRF_num, y = qubit_conc)) + geom_point() + stat_smooth()
