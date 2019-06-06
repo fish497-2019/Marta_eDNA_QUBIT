@@ -6,11 +6,22 @@ output: html_document
 
 
 ```{r}
-qbdata <- read.csv(file= "Data/QuBit2019_v4.csv", header = T, stringsAsFactors=F) 
-head(qbdata)
-library(ggplot2)
+qbdata2 <- read.csv(file= "Data/QuBit2019_v4.csv", header = T, stringsAsFactors=T) 
+
+library(tidyverse)
 ```
 
+```{r}
+filter(qbdata2, Day.collected > 10)
+```
+```{r}
+head(qbdata2)
+```
+
+
+```{r}
+fl-data <- filter(qbdata, Replicate == 1)
+```
 
 
 # Scatered plot of qubit values of all samples in relation to the number or cryptobenthic fish 
@@ -21,7 +32,7 @@ library(ggplot2)
 
 
 ```{r}
-ggplot(qbdata, aes(x = CRF_num, y = qubit_conc)) + geom_point()
+ggplot((filter(qbdata2, Habitat != "LC")), aes(x = CRF_num, y = qubit_conc, color = Habitat)) + geom_point()
   
 ```
 
